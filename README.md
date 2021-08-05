@@ -12,11 +12,11 @@ poetry install
 # Development mode with auto-reload
 uvicorn main:app --reload
 
-# Production mode with multiple workers
-uvicorn main:app --workers 5
+# Production mode with multiple workers on specified port
+uvicorn main:app --workers 5 --port 3000
 ```
 
-## Check out the API response
+## Test the API response
 
 - [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
@@ -27,3 +27,7 @@ uvicorn main:app --workers 5
 ## Check out the API docs (in ReDoc UI)
 
 - [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## Take it from here
+
+- Start your development from modifying `./main.py` and `./tests/test_main.py`.
