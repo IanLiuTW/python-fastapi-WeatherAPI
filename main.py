@@ -1,14 +1,21 @@
 from fastapi import FastAPI
-from typing import Optional
+from app.api import weather_stat
 
 app = FastAPI()
 
 
-@app.get("/")
-def hello_world():
-    return {"Hello": "World"}
+@app.get("/", include_in_schema=False)
+def root():
+    return {
+        "Examples": {
+            "Taipei": "http://127.0.0.1:8000/api/weather_stat",
+            "Seattle": "http://127.0.0.1:8000/api/weather_stat?country=US&city=Seattle&state=WA"
+        }
+    }
 
 
-@app.get("/{greet}")
-def greet_something(greet: str, something: Optional[str] = "World"):
-    return {greet: something}
+def configure():
+    app.include_router(weather_stat.router, prefix="/api/weather_stat")
+
+
+configure()
