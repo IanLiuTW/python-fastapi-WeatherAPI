@@ -1,7 +1,7 @@
-import fastapi
+from fastapi import FastAPI
 from typing import Optional
 
-app = fastapi.FastAPI()
+app = FastAPI()
 
 
 @app.get("/")
