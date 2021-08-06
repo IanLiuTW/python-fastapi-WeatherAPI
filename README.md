@@ -27,7 +27,3 @@ uvicorn main:app --workers 5 --port 3000
 ## Check out the API docs (in ReDoc UI)
 
 - [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
-## Take it from here
-
-- Start your development from modifying `./main.py` and `./tests/test_main.py`.
