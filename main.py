@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api import weather_stat
+from app.api import weather_status
 
 app = FastAPI()
 
@@ -15,7 +15,7 @@ def root():
 
 
 def configure():
-    app.include_router(weather_stat.router, prefix="/api/weather_stat")
+    app.include_router(weather_status.router, prefix="/api/weather_stat")
 
 
 configure()

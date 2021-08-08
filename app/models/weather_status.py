@@ -1,11 +1,11 @@
 from pydantic import BaseModel
-from typing import Optional
+from app.models.location import Location
 
 
-class WeatherStat(BaseModel):
-    city: str = "N/A"
-    state: Optional[str] = "N/A"
-    country: str = "N/A"
+class WeatherStatus(BaseModel):
+    """ Model defines the weather status of a location. """
+
+    location: Location
     weather: str = "N/A"
     description: str = "N/A"
     temp: float = 0.0
